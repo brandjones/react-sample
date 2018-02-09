@@ -1,5 +1,6 @@
 
 import moment from 'moment';
+import selectExpensesTotal from '../../selectors/expenses-total';
 
 export const expenses = [{
   id: '1',
@@ -11,7 +12,7 @@ export const expenses = [{
 { id: '2',
   description: 'Rent',
   note: '',
-  amount: 19500,
+  amount: 109500,
   createdAt: moment(0).subtract(4, 'days').valueOf()
 },
 { id: '3',
@@ -20,3 +21,6 @@ export const expenses = [{
   amount: 4500,
   createdAt: moment(0).add(4, 'days').valueOf()
 }];
+
+// const total = getExpenseTotal(expenses);
+// console.log(total);

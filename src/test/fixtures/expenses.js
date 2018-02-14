@@ -21,6 +21,3 @@ export const expenses = [{
   amount: 4500,
   createdAt: moment(0).add(4, 'days').valueOf()
 }];
-
-// const total = getExpenseTotal(expenses);
-// console.log(total);

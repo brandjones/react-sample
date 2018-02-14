@@ -4,7 +4,7 @@ import { Provider }     from 'react-redux';
 import AppRouter        from './routers/AppRouter';
 import configureStore   from './store/configureStore';
 
-import { addExpense, removeExpense, editExpense } from './actions/expenses';
+import { startSetExpenses } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 
@@ -24,8 +24,13 @@ const jsx = (
   </Provider>
 );
 
+ReactDOM.render(<p> Loading... </p>, document.getElementById('app'));
 
-ReactDOM.render(jsx, document.getElementById('app'));
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx, document.getElementById('app'));
+});
+
+
 
 
 // React does not handle too many components needing access
